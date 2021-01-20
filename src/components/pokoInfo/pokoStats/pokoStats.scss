@@ -1,0 +1,14 @@
+.pokostats-container {
+    margin-left: 20px;
+    & p {
+        padding: 0;
+        margin: 5px;
+    }
+}
+.base-stats {
+    margin-left: 30px;
+}
+.type-tags {
+    display: flex;
+    margin-left: 20px;
+}
