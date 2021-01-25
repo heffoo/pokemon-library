@@ -5,6 +5,7 @@
     background-color: rgb(196, 230, 247);
     position: relative;
     overflow: auto;
+    margin: 0 auto;
 }
 .images {
     float: right;
@@ -40,6 +41,6 @@
 }
 .side-button {
     position: absolute;
-    left:640px;
+    left:800px;
     top: 100px;
 }

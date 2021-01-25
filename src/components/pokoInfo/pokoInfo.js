@@ -10,12 +10,12 @@ export const PokoInfo = () => {
   const [pokeNumber, setPokeNumber] = useState("1"); //
   const [isLoad, setLoad] = useState(true);
   const [pokemon, setPokemon] = useState(null);
-  
+
   let { pokeUrl } = useParams();
-  
 
   function PokeInfo() {
     let url = "https://pokeapi.co/api/v2/pokemon/" + pokeUrl;
+    
     fetch(url)
       .then((response) => {
         return response.json();
@@ -42,13 +42,13 @@ export const PokoInfo = () => {
     form.elements.inputPoke.value = "";
   };
 
-  console.log(pokeUrl);
   return (
     <>
       {!isLoad ? (
         <div>
           <p className="pokeName">
-            this is {replaceArticle(pokemon.name)}. it is a {pokeNumber} in pokedex!
+            {console.log(pokemon)}
+            this is {replaceArticle(pokemon.name)}. it is a {pokemon.id} in pokedex!
           </p>
           <form className="searchForm" name="searchPokemon" onSubmit={onSubmitPoke}>
             <input type="text" className="inputPoke" name="inputPoke" />
