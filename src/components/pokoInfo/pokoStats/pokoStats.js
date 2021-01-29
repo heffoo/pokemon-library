@@ -8,6 +8,7 @@ export const PokoStats = ({ pokemon }) => {
       <p>Stats:</p>
       <div className="base-stats">
         <p>weight: {pokemon.weight}</p>
+  <p>height: {pokemon.height}</p>
       </div>
       <p>Types:</p>
       <div className="type-tags">

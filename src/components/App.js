@@ -16,18 +16,20 @@ function App() {
   return (
     <>
       <div className="wrapper">
-        <button className="side-button" onClick={handleClick}>
-          show all
-        </button>
-        <div className="main-container">
-          <Switch>
-            <Route path="/:pokeUrl">
-              <PokoInfo />
-            </Route>
-            <Route exact path="/">
-              <AllPokes />
-            </Route>
-          </Switch>
+        <div className="div">
+          <button className="side-button" onClick={handleClick}>
+            show all
+          </button>
+          <div className="main-container">
+            <Switch>
+              <Route path="/:pokeUrl">
+                <PokoInfo />
+              </Route>
+              <Route exact path="/">
+                <AllPokes />
+              </Route>
+            </Switch>
+          </div>
         </div>
       </div>
     </>

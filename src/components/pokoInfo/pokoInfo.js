@@ -7,15 +7,15 @@ import "../App.scss";
 
 export const PokoInfo = () => {
   const [shiny, setShiny] = useState(false);
-  const [pokeNumber, setPokeNumber] = useState("1"); //
+  const [pokeNumber, setPokeNumber] = useState(""); //
   const [isLoad, setLoad] = useState(true);
   const [pokemon, setPokemon] = useState(null);
 
   let { pokeUrl } = useParams();
 
+  console.log(pokeUrl);
   function PokeInfo() {
-    let url = "https://pokeapi.co/api/v2/pokemon/" + pokeUrl;
-    
+    let url = "https://pokeapi.co/api/v2/pokemon/" + (pokeNumber || pokeUrl);
     fetch(url)
       .then((response) => {
         return response.json();
@@ -54,13 +54,13 @@ export const PokoInfo = () => {
             <input type="text" className="inputPoke" name="inputPoke" />
           </form>
           <div className="images">
-            <button onClick={() => setShiny(!shiny)}>{shiny ? "view default form" : "view shiny form"}</button>
+            <button className="shiny-button" onClick={() => setShiny(!shiny)}>{shiny ? "view default form" : "view shiny form"}</button>
             <div>
               <img src={!shiny ? `${pokemon.sprites.front_default}` : `${pokemon.sprites.front_shiny}`} alt="" />
               <img src={!shiny ? `${pokemon.sprites.back_default}` : `${pokemon.sprites.back_shiny}`} alt="" />
             </div>
           </div>
-          <PokoStats pokemon={pokemon} />{" "}
+          <PokoStats pokemon={pokemon} />
         </div>
       ) : (
         "loading"

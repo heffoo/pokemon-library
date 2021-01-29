@@ -10,7 +10,7 @@ export const AllPokes = ({ pokemon }) => {
   // console.log(pokes.results)
   function allPokes() {
     let url = "https://pokeapi.co/api/v2/pokemon?limit=800";
-    fetch(url)
+    fetch(url) 
       .then((response) => {
         return response.json();
       })
